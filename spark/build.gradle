@@ -1,0 +1,24 @@
+plugins {
+    id 'scala'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '2.0.4'
+}
+
+// sourceCopatibility = 1.8
+mainClassName = 'WordCount'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.apache.spark:spark-core_2.11:2.3.1'
+    compile 'org.apache.spark:spark-sql_2.11:2.3.1'
+    compile 'org.apache.spark:spark-mllib_2.11:2.3.1'
+    compile 'org.scala-lang:scala-library:2.11.8'
+    compile 'com.atilika.kuromoji:kuromoji-ipadic:0.9.0'
+}
+
+shadowJar {
+  zip64 true
+}
